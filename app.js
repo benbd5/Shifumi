@@ -28,18 +28,23 @@ for (let i = 0; i < buttons.length; i++) {
 
     if (playerChoice === computerChoice) {
       resultat = "Egalité";
+      resultatText.style.color = "blue";
     } else if (
       (playerChoice === "Pierre" && computerChoice === "Ciseaux") ||
       (playerChoice === "Feuille" && computerChoice === "Pierre") ||
       (playerChoice === "Ciseaux" && computerChoice === "Feuille")
     ) {
-      resultat = "Vous avez gagné !";
+      resultat = "Vous avez gagné un point !";
+      resultatText.style.color = "green";
       scorePlayer++;
       userScoreSpan.innerHTML = scorePlayer;
+      userScoreSpan.style.color = "green";
     } else {
-      resultat = "Vous avez perdu !";
+      resultat = "L'ordinateur a gagné un point !";
+      resultatText.style.color = "red";
       scoreComputer++;
       computerScoreSpan.innerHTML = scoreComputer;
+      computerScoreSpan.style.color = "red";
     }
 
     resultatText.innerHTML = `
